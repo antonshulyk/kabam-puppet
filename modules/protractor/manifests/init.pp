@@ -18,19 +18,12 @@ class protractor($version = "v0.10.17"){
 			logoutput => true,
 	}
 	
-#	file { ["/home/nodejs/", "/home/nodejs/.nvm", "/home/nodejs/.nvm/${version}", "/home/nodejs/.nvm/${version}/lib", "/home/nodejs/.nvm/${version}/lib/node_modules", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example"]:
-#		owner => 'nodejs',
-#		group => 'nodejs',
-#		ensure => directory,
-#		require => Sruser['nodejs'],
-#	}
-
-#	file { "/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example":
-#		owner => 'nodejs',
-#		group => 'nodejs',
-#		ensure => directory,
-#		require => Sruser['nodejs'],
-#	}
+	file { ["/home/nodejs/", "/home/nodejs/.nvm", "/home/nodejs/.nvm/${version}", "/home/nodejs/.nvm/${version}/lib", "/home/nodejs/.nvm/${version}/lib/node_modules", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example"]:
+		owner => 'nodejs',
+		group => 'nodejs',
+		ensure => directory,
+		require => Sruser['nodejs'],
+	}
 
 	file {"/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example/conf.js":
                 owner => nodejs,
