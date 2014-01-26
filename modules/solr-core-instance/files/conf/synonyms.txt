@@ -1,0 +1,59 @@
+watch,watches
+disk,disc
+tablets, tabs, notebook, tablet,tab
+movies, movie
+irons=>iron
+trousers,trouser,pants,pant
+shirts,shirt
+handicam,handycam
+tshirts,tshirt
+pizza,dominos
+chappals,slippers
+shoes,footwear
+tattoo,tatoo,tatoos,tattoos
+perfumes,scents
+panty,pantie,panties,pantys
+underwear,innerwear
+disk,drive
+harddisk,harddrive
+card,cards
+mice,mouse
+perfumes,scent
+perfumes=>davidoff
+watches=>citizen
+bags=>bags,handbags
+beanbags,beanbag=>bean bag
+press=>iron
+s3=>samsung
+s2,sii
+s3,siii
+tvs=>television
+tv=>television
+mobiles=>mobile phone
+mobile=>mobile phone
+fridge,frigde=>fridge,refrigerator
+spectacles=>frames
+ucb=>united colors benetton
+iphone=>apple
+smartphones=>mobile phones
+hometheater=>home theater
+hometheatre=>home theater
+hometheatres=>home theatres
+hometheatres=>home theatres
+ladies=>womens
+hoodie,hooded
+ubuntu,linux
+back up=>backup
+ac=>air conditioners
+acs=>air conditioners
+ac's=>air conditioners
+games=>gaming
+kids,infant,boys,girls
+wear,clothing
+cod=>call of duty
+NFS=>Need for Speed
+COD=>Call Of Duty
+GRAW=>Ghost Recon Advance Warfighter
+PES=>Pro Evolution Soccer
+PSP=>playstation portable
+PS3=>PlayStation 3

@@ -1,0 +1,7 @@
+#check process <%= app_name %> with pidfile /var/run/<%= app_name %>
+# stop program = "/sbin/stop <%= app_name %>"
+# start program = "/sbin/start <%= app_name %>"
+
+check host <%= app_name %>_host with address <%= app_ip %>
+  if failed url http://<%= app_ip %>:<%= app_port %>/home
+     then exec "/bin/su - nodejs /home/nodejs/restartPm2NodeApp.sh <%= app_name %>"
