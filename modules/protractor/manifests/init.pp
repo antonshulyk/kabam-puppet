@@ -1,10 +1,23 @@
-class protractor($version = "v0.10.17"){
+class protractor(){
+
+	$version = "v0.10.17"
+	$user = "nodejs"
+
+	$protractor_dir = ["/home/nodejs/", "/home/nodejs/.nvm/", "/home/nodejs/.nvm/${version}/", "/home/nodejs/.nvm/${version}/lib/", 
+					   "/home/nodejs/.nvm/${version}/lib/node_modules/", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor/", 
+					   "/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example",]
+
+	file { $protractor_dir:
+		ensure => directory,
+		require => File["/home/nodejs"],
+	}
+	
+	notify {"protractor entered":}
 
 	file{ "/home/nodejs/protractor.sh":
-		owner => nodejs,
-		group => nodejs,
 		mode => '0750',
 		source => "puppet:///modules/protractor/protractor.sh",
+		require => File["/home/nodejs"],
 	}
 	
 	Exec {
@@ -17,25 +30,16 @@ class protractor($version = "v0.10.17"){
 			'/sbin'],
 			logoutput => true,
 	}
-	
-	file { ["/home/nodejs/", "/home/nodejs/.nvm", "/home/nodejs/.nvm/${version}", "/home/nodejs/.nvm/${version}/lib", "/home/nodejs/.nvm/${version}/lib/node_modules", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor", "/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example"]:
-		owner => 'nodejs',
-		group => 'nodejs',
-		ensure => directory,
-		require => Sruser['nodejs'],
-	}
 
 	file {"/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example/conf.js":
-                owner => nodejs,
-                group => nodejs,
-                mode => 0755,
+                mode => 600,
                 source => "puppet:///modules/protractor/conf.js",
-        }
+				require => File["/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example/"],
+    }
 
 	file {"/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example/in_app.js":
-		owner => nodejs,
-		group => nodejs,
-        mode => 0755,
+        mode => 600,
         source => "puppet:///modules/protractor/in_app.js",
-        }
+				require => File["/home/nodejs/.nvm/${version}/lib/node_modules/protractor/example/"],
+    }
 }
